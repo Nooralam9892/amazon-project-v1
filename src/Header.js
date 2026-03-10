@@ -1,59 +1,32 @@
-import React from 'react'
-import './Header.css'
-import SearchIcon from '@mui/icons-material/Search';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import React from 'react';
+import './Header.css';
 import { Link } from 'react-router-dom';
 
 function Header() {
-    return (
-        <div className="header">
-            <Link to="/">
-                <img className="header--logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon" />
-            </Link>
-            <div className="header--location">
-                <LocationOnOutlinedIcon />
-            </div>
-            <span className="header--option">
+  return (
+    <header className="header">
+      <div className="header__inner">
+        <Link to="/" className="header__brand" aria-label="ormobiles homepage">
+          <span className="header__logo">or</span>
+          <div>
+            <p className="header__name">ormobiles</p>
+            <p className="header__tag">Tech Discovery & Price Compare</p>
+          </div>
+        </Link>
 
-                <span className="header--optionLineOne">Deliver to SHAIKH</span>
-                <span className="header--optionLineTwo">Mumbai 400017</span>
-            </span>
+        <nav className="header__nav" aria-label="Primary">
+          <a href="/">Mobiles</a>
+          <a href="/">Laptops</a>
+          <a href="/">Comparisons</a>
+          <a href="/">Blog</a>
+        </nav>
 
-
-            <div className="header--search">
-                <input className="header--searchInput" type="text" />
-                {/* Material UI */}
-                <SearchIcon className="header--searchIcon" h />
-            </div>
-
-            <div className="header--nav">
-                <div className="header--option">
-                    <span className="header--optionLineOne">Hello Guest</span>
-                    <span className="header--optionLineTwo">Sign In</span>
-                </div>
-
-                <div className="header--option">
-                    <span className="header--optionLineOne">Return</span>
-                    <span className="header--optionLineTwo">& Order</span>
-                </div>
-
-                <div className="header--option">
-                    <span className="header--optionLineOne">Your</span>
-                    <span className="header--optionLineTwo">Prime</span>
-                </div>
-
-            </div>
-            <Link to="/checkout">
-                <div className="header--optionBasket">
-                    <ShoppingCartIcon />
-                    <span className="header--optionLineTwo header--basketCount">0</span>
-                </div>
-            </Link>
-        </div >
-    )
+        <Link to="/checkout" className="header__cta">
+          Today&apos;s Deals
+        </Link>
+      </div>
+    </header>
+  );
 }
-
-
 
 export default Header;
